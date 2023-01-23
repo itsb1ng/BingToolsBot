@@ -2,4 +2,3 @@ yarl
 aiohttp
 multidict==4.7.3
 git+https://github.com/Pycord-Development/pycord
-random
