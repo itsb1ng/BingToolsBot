@@ -12,9 +12,6 @@ from discord.ui import Button, View
 import dateutil.parser as dp
 from datetime import timedelta
 
-##API Keys and Disord Token Hidden in .env file
-load_dotenv()
-
 token = os.environ['TOKEN']
 
 intents = discord.Intents.all()
