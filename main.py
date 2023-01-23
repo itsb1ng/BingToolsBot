@@ -16,8 +16,7 @@ from datetime import timedelta
 ##API Keys and Disord Token Hidden in .env file
 load_dotenv()
 
-token = os.getenv('TOKEN')
-KEY = os.getenv('API_KEY')
+token = os.environ['TOKEN']
 
 intents = discord.Intents.all()
 bing = commands.Bot(command_prefix='bt!', intents=intents)
