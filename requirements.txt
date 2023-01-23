@@ -1,2 +1,4 @@
 multidict==4.7.3
+aiohttp
+yarl
 git+https://github.com/Pycord-Development/pycord
