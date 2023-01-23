@@ -8,7 +8,6 @@ import discord
 from discord.commands import Option
 from discord.ext.commands import cooldown, BucketType
 from discord.ui import Button, View
-import dateutil.parser as dp
 from datetime import timedelta
 
 token = os.environ['TOKEN']
