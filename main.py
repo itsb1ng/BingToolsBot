@@ -99,7 +99,6 @@ async def on_command_error(ctx, error):
 
 @bing.event
 async def on_ready():
-  print("Ready")
   await bing.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name="/report | bing#6313"), status=discord.Status.dnd)
 
 @bing.event
