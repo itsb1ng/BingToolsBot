@@ -1,5 +1,4 @@
 import os
-import requests
 import datetime
 from datetime import datetime
 from datetime import date
@@ -22,10 +21,6 @@ intents = discord.Intents.all()
 bing = commands.Bot(command_prefix='bt!', intents=intents)
 
 PINK_COLOR = 0xC98FFC
-
-def getInfo(call):
-    r = requests.get(call)
-    return r.json()
 
 class reportModal(discord.ui.Modal):
     def __init__(self, *args, **kwargs) -> None:
