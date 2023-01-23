@@ -10,6 +10,9 @@ from discord.ext.commands import cooldown, BucketType
 from discord.ui import Button, View
 from datetime import timedelta
 import random
+from dotenv import load_dotenv
+
+load_dotenv()
 
 token = os.environ['TOKEN']
 
