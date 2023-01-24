@@ -53,10 +53,11 @@ class verifyModal(discord.ui.Modal):
 
         self.add_item(discord.ui.InputText(label="Verification Code"))
 
-    def variables(self, author, channel, cache):
+    def variables(self, author, channel, cache, cacheNum):
         self.author = author
         self.channel = channel
         self.cache = cache
+        self.num = cacheNum
 
     async def callback(self, interaction: discord.Interaction):
 
@@ -80,6 +81,8 @@ class verifyModal(discord.ui.Modal):
             embed.set_thumbnail(url=self.author.display_avatar)
 
             await bing.get_channel(1067096413353279529).send(embed=embed)
+
+            userCache.pop(self.num)
         
         else:
             embed = discord.Embed(title="❌ Invalid Code", color=0xFFA6A6)
@@ -161,9 +164,10 @@ async def verify(ctx):
     for i, data in enumerate(userCache):
         if data['user'] == ctx.author.id:
             cache = data
+            num = i
     if cache:      
         modal = verifyModal(title="BingTools Verification")
-        modal.variables(ctx.author, ctx.channel, cache)
+        modal.variables(ctx.author, ctx.channel, cache, num)
         await ctx.send_modal(modal)
     else:
         await ctx.reply("Invalid user please contact an Admin")
